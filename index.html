@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+    <style>body { visibility: hidden; }</style>
+  </head>
+  <body>
+    
+    <canvas id="bg"></canvas>
+
+    <button id="menu-btn">⚙ Settings</button>
+
+    <div id="menu-overlay">
+      <div class="menu-panel">
+
+        <div class="menu-header">
+          <h2>Settings</h2>
+          <button id="menu-close">✕</button>
+        </div>
+
+        <label>Play against bot</label>
+        <select id="setting-bot">
+          <option value="0">No — two players</option>
+          <option value="1">Yes — play as white</option>
+        </select>
+
+        <label>Board color</label>
+        <select id="setting-board">
+          <option value="0">Default</option>
+          <option value="1">Marble</option>
+        </select>
+
+        <label>White piece color</label>
+        <select id="setting-white">
+          <option value="0">Default</option>
+          <option value="1">Marble</option>
+        </select>
+
+        <label>Black piece color</label>
+        <select id="setting-black">
+          <option value="0">Default</option>
+          <option value="1">Obsidian</option>
+        </select>
+
+        <label>Selected piece highlight</label>
+        <select id="setting-highlight-self">
+          <option value="0">White</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+        </select>
+
+        <label>Move highlight color</label>
+        <select id="setting-highlight-other">
+          <option value="0">White</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+        </select>
+
+        <div class="menu-actions">
+          <button id="menu-apply">Apply &amp; restart</button>
+          <button id="menu-cancel">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="gameover-overlay">
+      <div class="menu-panel gameover-panel">
+        <div id="gameover-icon">♔</div>
+        <h2 id="gameover-title">Checkmate!</h2>
+        <p id="gameover-subtitle">White wins</p>
+        <div class="menu-actions gameover-actions">
+          <button id="gameover-restart">Play again</button>
+          <button id="gameover-settings">⚙ Change settings</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

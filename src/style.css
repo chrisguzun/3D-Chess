@@ -1,0 +1,138 @@
+body {
+  visibility: visible;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#menu-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#menu-overlay,
+#gameover-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-panel {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 340px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+#menu-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-panel label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.menu-panel select {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #2a2a3e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.menu-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+#menu-apply {
+  background: #4a4aaa;
+  border: none;
+}
+
+#menu-cancel,
+#gameover-settings {
+  background: #2a2a3e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gameover-panel {
+  padding: 32px;
+  text-align: center;
+  min-width: 300px;
+}
+
+#gameover-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+#gameover-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+#gameover-subtitle {
+  margin: 0 0 28px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.gameover-actions {
+  flex-direction: column;
+}
+
+#gameover-restart {
+  background: #4a4aaa;
+  border: none;
+}
