@@ -387,8 +387,11 @@ function movePiece(piece, tile) {
             : piece.tile[0] + (parseInt(piece.tile[1]) - 1).toString();
     }
 
+    
     deselectTile();
-    turn = turn == "white" ? "black" : "white";
+    if (specialMove?.type != "promotion") {
+        turn = turn == "white" ? "black" : "white";
+    }
 }
 
 function easeOutCubic(t) {
@@ -396,6 +399,12 @@ function easeOutCubic(t) {
 }
 
 function promptPromotion(piece){
+
+    // If it's the bot's piece, auto-promote to queen without showing labels
+    if (botEnabled && piece.color == "black") {
+        submitPromotion(piece, "queen");
+        return;
+    }
 
 	promotionSelection = true;
 	piecePendingPromotion = piece;
@@ -458,6 +467,14 @@ function submitPromotion(piece, choice){
 	removeLabel("label_choiceBishop");
 	removeLabel("label_choiceQueen");
 	removeLabel("label_choiceKnight");
+
+    // flip the turn after the player has chosen
+    turn = turn == "white" ? "black" : "white";
+    refreshMoveList();
+
+    if (!gameOver && botEnabled && turn == "black") {
+        setTimeout(doBotMove, 300);
+    }
 
 }
 
@@ -1236,7 +1253,7 @@ function playSound(type) {
     Bot
 */
 
-const BOT_DEPTH = 3; // how many moves ahead the bot looks (higher = stronger but slower)
+const BOT_DEPTH = 1; // how many moves ahead the bot looks (higher = stronger but slower)
 
 const PIECE_VALUES = {
     pawn:   100,
@@ -1471,6 +1488,7 @@ function doBotMove() {
     // Temporarily set selectedTile so movePiece can find the piece object
     selectedTile = piece.tile;
     movePiece(piece, targetTile);
+
 }
 
 
