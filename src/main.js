@@ -1253,7 +1253,7 @@ function playSound(type) {
     Bot
 */
 
-const BOT_DEPTH = 1; // how many moves ahead the bot looks (higher = stronger but slower)
+const BOT_DEPTH = 3; // how many moves ahead the bot looks (higher = stronger but slower)
 
 const PIECE_VALUES = {
     pawn:   100,
